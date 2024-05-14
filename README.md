@@ -10,7 +10,7 @@ Para utilizar los ejemplos, simplemente descarga el archivo `.sql` correspondien
 
 ## Ver Mis Videos
 
-Para ver los videos cortos que menciono en este repositorio, visita mi [perfil](https://www.instagram.com/cristoto.dev/). Allí encontrarás contenido adicional y actualizaciones sobre SQL y MySQL.
+Para ver los videos cortos que menciono en este repositorio, visita mi [perfil](https://www.instagram.com/cristoto.dev/){:target="_blank"}. Allí encontrarás contenido adicional y actualizaciones sobre SQL y MySQL.
 
 
 ## Contacto
