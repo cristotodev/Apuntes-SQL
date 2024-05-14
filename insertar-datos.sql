@@ -1,3 +1,6 @@
+-- Recuerda que primero tienes que indicar con qué BD quieres trabajar.
+USE empresa;
+
 -- Para insertar registros en una tabla tenemos INSERT INTO [nombre de la tabla][(columnas)] VALUES (valores para cada columna separado por comas)
 -- La parte [(columnas)] es opcinal. Por esa razón está entre corchetes. Si no se especifica va en orden.
 
