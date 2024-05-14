@@ -6,7 +6,7 @@ USE empresa;
 
 -- Insertar Un Registro Usando Nombres de Columnas
 INSERT INTO clientes (nombre, email, fecha_nacimiento, sueldo)
-VALUES ('Cristotodev', 'cristotodev@dev.com', NULL, 4500.00);
+VALUES ('Cristotodev', 'cristotodev@dev.com', now(), 4500.00);
 
 -- Insertar Varios Registros a la Vez
 INSERT INTO clientes (nombre, email, fecha_nacimiento, sueldo)
@@ -15,7 +15,7 @@ VALUES
 ('María Rodríguez', 'maria.rodriguez@example.com', '1978-09-22', 5500.00);
 
 -- Insertar un registro sin especificar las columnas. En este caso van en orden según la tabla. Primero nombre, luego email, ...
-INSERT INTO clientes VALUES ('Juan Pérez', 'juan.perez@example.com', NULL, 5000.00);
+INSERT INTO clientes VALUES ('Juan Pérez', 'juan.perez@example.com', now(), 5000.00);
 
 -- Insertar varios registros sin especificar las columnas. En este caso van en orden según la tabla. Primero nombre, luego email, ...
 -- Para insertar múltiples registros a la vez, puedes separar cada conjunto de valores con una coma.

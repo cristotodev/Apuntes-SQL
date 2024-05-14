@@ -23,3 +23,16 @@ DELETE FROM clientes ORDER BY id LIMIT 3;
 -- Para eliminar registros de tablas relacionadas, puedes usar DELETE JOIN. Sin embargo, este ejemplo asume que tienes una tabla relacionada llamada pedidos que tiene una clave foránea que hace referencia a clientes.id.
 DELETE c FROM clientes c INNER JOIN pedidos p ON c.id = p.cliente_id;
 
+/*
+La sentencia TRUNCATE TABLE en MySQL es una forma eficiente de eliminar todos los registros de una tabla. 
+A diferencia de DELETE, TRUNCATE no registra las operaciones individuales de eliminación y es más rápido, especialmente en tablas grandes. 
+*/
+
+-- Para eliminar todos los registros de la tabla clientes, simplemente usas TRUNCATE TABLE seguido del nombre de la tabla.
+TRUNCATE TABLE clientes;
+
+-- Truncar la Tabla y Reasignar los ID
+-- Podemos limpiar toda la tabla y especificar en qué valor queremos que empiece el AUTO_INCREMENT de nuevo.
+-- Aunque eso es una acción posterior al TRUNCATE
+TRUNCATE TABLE clientes;
+ALTER TABLE clientes AUTO_INCREMENT = 1;
