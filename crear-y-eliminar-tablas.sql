@@ -3,7 +3,7 @@ USE empresa;
 
 -- Para crear una tabla usamos CREATE TABLE [nombre de la tabla] ( columna tipo)
 CREATE TABLE clientes (
-    --El nombre de la columna es "id", su tipo int, AUTO_INCREMENT indica que su valor se incrementará automaticamente y además es clave primaria.
+    -- El nombre de la columna es "id", su tipo int, AUTO_INCREMENT indica que su valor se incrementará automaticamente y además es clave primaria.
     id int AUTO_INCREMENT PRIMARY KEY, 
     -- NOT NULL indica que todos los clientes deben tener un nombre asignado.
     nombre varchar(50) NOT NULL,
