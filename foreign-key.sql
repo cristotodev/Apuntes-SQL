@@ -47,3 +47,45 @@ Existen varios tipos de relaciones en bases de datos:
 
 En los demás videos y documentos de este repositorios encontrarás sus ejemplos y explicaciones
 */
+
+
+/*
+Para mantener la integridad de los datos podemos usar restricciones en las claves foraneas a la hora de actualizar y eliminar registros.
+Los tipos de restricciones que tenemos son CASCADE, SET NULL, SET DEFAULT, NO ACTION y RESTRICT.
+Esto es como actuar con la tabla relacionada cuando se actualice o elimine registros.
+
+1. CASCADE:
+    - ON DELETE CASCADE: Si se elimina una fila en la tabla referenciada, todas las filas en la tabla que contiene la clave foránea que están relacionadas con esa fila también se eliminarán.
+    - ON UPDATE CASCADE: Si se actualiza el valor de la clave primaria en la tabla referenciada, todos los valores correspondientes en la tabla que contiene la clave foránea se actualizarán automáticamente.
+
+2. SET NULL:
+    - ON DELETE SET NULL: Si se elimina una fila en la tabla referenciada, todos los valores correspondientes en la tabla que contiene la clave foránea se establecerán a NULL.
+    - ON UPDATE SET NULL: Si se actualiza el valor de la clave primaria en la tabla referenciada, todos los valores correspondientes en la tabla que contiene la clave foránea se establecerán a NULL.
+
+3. SET DEFAULT:
+    - ON DELETE SET DEFAULT: Si se elimina una fila en la tabla referenciada, todos los valores correspondientes en la tabla que contiene la clave foránea se establecerán al valor predeterminado definido para esa columna.
+    - ON UPDATE SET DEFAULT: Si se actualiza el valor de la clave primaria en la tabla referenciada, todos los valores correspondientes en la tabla que contiene la clave foránea se establecerán al valor predeterminado.
+
+4. NO ACTION:
+    - ON DELETE NO ACTION: Si se intenta eliminar una fila en la tabla referenciada que tiene referencias en otra tabla, la acción fallará y no se permitirá la eliminación. Esta es la acción predeterminada si no se especifica ninguna otra.
+    - ON UPDATE NO ACTION: Similar a la eliminación, si se intenta actualizar una fila en la tabla referenciada que tiene referencias en otra tabla, la acción fallará y no se permitirá la actualización.
+
+5. RESTRICT:
+    - ON DELETE RESTRICT: Esta restricción impide la eliminación de una fila en la tabla referenciada si existen filas relacionadas en la tabla que contiene la clave foránea. Es similar a NO ACTION, pero es verificada inmediatamente después del intento de eliminación.
+    - ON UPDATE RESTRICT: Impide la actualización de una fila en la tabla referenciada si existen filas relacionadas en la tabla que contiene la clave foránea.
+*/
+
+CREATE TABLE municipios (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50),
+);
+
+CREATE TABLE cliente(
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50),
+    municipioID INT,
+
+    FOREIGN KEY (municipioID) REFERENCES municipios(id)
+    ON DELETE CASCADE -- Si borro un municipio se borrarán todos los clientes que tengan asignado ese municipio porque están relacionado
+    ON UPDATE CASCADE -- Si actualizo el id de un municipio se actualizará ese id en la tabla clientes para los clientes que tienen la relación.
+)
